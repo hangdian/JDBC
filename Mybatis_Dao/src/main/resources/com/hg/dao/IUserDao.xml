@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hg.dao.IUserDao">
+    <!--配置查询所有-->
+    <select id="findAll" resultType="com.hg.domain.User">
+        select * from user
+    </select>
+    <!--添加操作-->
+    <insert id="saveUser" parameterType="com.hg.domain.User">
+        <!--插入数据之后获取插入数据的id-->
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,birthday,sex,address)values(#{username},#{birthday},#{sex},#{address});
+    </insert>
+    <!--更新用户-->
+    <update id="updateUser" parameterType="com.hg.domain.User">
+        update user set username=#{username},address=#{address},sex=#{sex},birthday=#{birthday}where id=#{id};
+    </update>
+    <!--删除用户-->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id=#{uid};<!--这里只有一个参数，怎么写都可以，作用就是一个占位符-->
+    </delete>
+    <!--根据id查用户的信息-->
+    <select id="findById" parameterType="Integer"   resultType="com.hg.domain.User">
+        select * from user where id=#{uid};
+    </select>
+    <!--根据名称模糊查用户的信息-->
+    <select id="findByName" parameterType="string" resultType="com.hg.domain.User">
+        select * from user where username like #{name}
+    </select>
+    <!--总用户数-->
+    <select id="findTotal" resultType="int">
+    select count(id) from user;
+    </select>
+    <!--根据queryVo的条件查询用户-->
+    <select id="findUserByVo" parameterType="com.hg.domain.QueryVo" resultType="com.hg.domain.User">
+        select * from user where username like #{user.username}
+    </select>
+</mapper>

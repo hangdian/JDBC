@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hg.dao.IUserDao">
+    <select id="findAll"   resultType="com.hg.domain.User">
+        select * from user
+    </select>
+    <select id="findById" resultType="com.hg.domain.User" parameterType="int">
+        select * from user where id=#{uid}
+    </select>
+    <insert id="saveUser" parameterType="com.hg.domain.User">
+        <selectKey keyColumn="id" keyProperty="id" resultType="int">
+           select last_insert_id();
+        </selectKey>
+        insert  into user (username,birthday,sex,address)
+                    values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+    <update id="updateUser" parameterType="com.hg.domain.User">
+        update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address}
+                    where id=#{id}
+    </update>
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id=#{uid}
+    </delete>
+    <select id="findByName" resultType="com.hg.domain.User" parameterType="String">
+        select * from user where username like #{username}
+    </select>
+    <select id="findTotal" resultType="int">
+        select count(*) from user
+    </select>
+    <select id="findByVo" resultType="com.hg.domain.User" parameterType="com.hg.domain.QueryVo">
+        select * from USER where username like #{user.username};
+    </select>
+    <select id="findByUser" resultType="user" parameterType="user">
+        select * from USER where 1=1
+        <if test="username!=null and username!=''">
+            and username like #{username}
+        </if>
+        <if test="address!=null">
+            and address like #{address}
+        </if>
+    </select>
+
+</mapper>
