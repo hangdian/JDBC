@@ -1,0 +1,17 @@
+[DEBUG[20-12-11][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG[20-12-11][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG[20-12-11][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG[20-12-11][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG[20-12-11][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 302977067.
+[DEBUG[20-12-11][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@120f102b]
+[DEBUG[20-12-11][com.hg.dao.UserMapper.getUserById]==>  Preparing: select * from USER where id=?;
+[DEBUG[20-12-11][com.hg.dao.UserMapper.getUserById]==> Parameters: 2(Integer)
+[DEBUG[20-12-11][com.hg.dao.UserMapper.getUserById]<==      Total: 1
+[DEBUG[20-12-11][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@120f102b]
+[DEBUG[20-12-11][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@120f102b]
+[DEBUG[20-12-11][org.apache.ibatis.datasource.pooled.PooledDataSource]Returned connection 302977067 to pool.

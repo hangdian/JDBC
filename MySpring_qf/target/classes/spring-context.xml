@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--生产对象-->
+    <bean id="userDao" class="com.hg.dao.UserDaoImpl"></bean>
+    <bean id="userService " class="com.hg.server.UserServiceImpl"></bean>
+    <bean id="addr"  class="com.hg.entity.Address">
+        <property name="id" value="1"></property>
+        <property name="city" value="hangzhou"></property>
+    </bean>
+    <bean id="user" class="com.hg.entity.User">
+        <property name="id" value="10"/>
+        <property name="password"  value="1234"/>
+        <property name="sex"    value="male"/>
+        <property name="age"    value="14"/>
+        <property name="bornDate"  value="2020/12/12 12:30:30"/>
+        <property name="hobbys" >
+            <array>
+                <value>football</value>
+                <value>spring</value>
+            </array>
+        </property>
+        <property name="names">
+            <list>
+                <value>tom</value>
+                <value>jack</value>
+            </list>
+        </property>
+        <property name="phones">
+            <set>
+                <value>123456</value>
+                <value>234567</value>
+            </set>
+        </property>
+        <property name="countries"  >
+            <map>
+                <entry key="zh" value="china"></entry>
+                <entry key="am" value="Amarillo"></entry>
+            </map>
+        </property>
+        <property name="files">
+            <props>
+                <prop key="url">jdbc:mysql:xxx</prop>
+                <prop key="username">root:</prop>
+            </props>
+        </property>
+        <property name="address"   ref="addr"></property>
+
+    </bean>
+</beans>

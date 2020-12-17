@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema//context/spring-context.xsd">
+   <!-- <bean id="student" class="com.hg.entity.Student" autowire="byName">
+        <property name="id" value="42" ></property>
+        <property name="name"   >
+
+        <null/>
+        </property>
+        <property name="age"    value="17"></property>
+        <property name="sex"    >
+            <value><![CDATA[<<你猜>>]]></value>
+        </property>
+       <!- <property name="grade">
+            <bean id="grade" class="com.hg.entity.Grade">
+                <property name="number" value="2"></property>
+            </bean>
+        </property>
+
+    </bean>
+    <bean id="grade" class="com.hg.entity.Grade">
+        <property name="number" value="4"></property>
+    </bean>
+
+    <bean id="StudentService" class="com.hg.service.StudentServiceImpl">
+        <property name="StudentDao" ref="StudentDaoImpl"></property>
+    </bean>
+    <bean id="StudentDaoImpl" class="com.hg.dao.StudentImpl"></bean>
+    <bean id="Stu" class="com.hg.entity.Stu">
+        <property name="course">
+            <array>
+                <value>java</value>
+                <value>python</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+               <value>hong</value>
+                <value>gang</value>
+            </list>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="JAVA" value="spring"></entry>
+                <entry key="python" value="machine"></entry>
+            </map>
+        </property>
+        <property name="sets"   >
+            <set>
+                <value>mysql</value>
+                <value>redis</value>
+            </set>
+        </property>
+    </bean>
+    <bean id="couser1" class="com.hg.entity.Course">
+        <property name="cname"  value="java"></property>
+    </bean>
+    <bean id="course2" class="com.hg.entity.Course">
+        <property name="cname"  value="python"></property>
+    </bean>-->
+    <context:component-scan base-package="com.hg"></context:component-scan>
+
+
+
+
+</beans>

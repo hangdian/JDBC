@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hg.dao.StudentMapper">
+
+    <select id="getStudent2" resultMap="StudentTeacher2">
+        SELECT s.id sid,s.name sname,t.name tname
+        FROM student s,teacher t
+        WHERE s.tid=t.id;
+    </select>
+    <resultMap id="StudentTeacher2" type="student">
+        <result property="id" column="sid"></result>
+        <result property="name" column="sname"></result>
+        <association property="teacher" javaType="teacher">
+            <result property="name" column="tname"></result>
+            <result property="id" column="id"/>
+
+        </association>
+    </resultMap>
+    <!--=================================================================================-->
+
+    <select id="getStudent" resultMap="StudentTeacher">
+        SELECT * FROM student
+    </select>
+    <resultMap id="StudentTeacher" type="student">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <association property="teacher" column="tid" javaType="teacher" select="getTeacher"></association>
+    </resultMap>
+    <select id="getTeacher" resultType="teacher">
+        select * from teacher where id=#{id}
+    </select>
+</mapper>
